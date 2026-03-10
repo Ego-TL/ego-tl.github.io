@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="EgoTL:">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="PAPER_TITLE">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="PAPER_TITLE">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>EgoTL</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" href="static/images/icon.png">
+  <link rel="apple-touch-icon" href="static/images/icon.png">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "PAPER_TITLE",
+    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "FIRST_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "SECOND_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONFERENCE_OR_JOURNAL_NAME"
+    },
+    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing", 
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "INSTITUTION_OR_LAB_NAME",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://YOUR_DOMAIN.com/static/images/icon.png",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Our Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <!-- TODO: Replace with your lab's related works -->
+        <a href=" " class="work-item" target="_blank">
+          <div class="work-info">
+            <!-- TODO: Replace with actual paper title -->
+            <h5>Paper Title 1</h5>
+            <!-- TODO: Replace with brief description -->
+            <p>Brief description of the work and its main contribution.</p>
+            <!-- TODO: Replace with venue and year -->
+            <span class="work-venue">Conference/Journal 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <!-- TODO: Add more related works or remove extra items -->
+        <a href=" " class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 2</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href=" " class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 3</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title vj-hero-title-cyber">✨ EgoTL: Egocentric Think-Aloud Chains for Long-Horizon Tasks ✨</h1>
+            <!--
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Institution Name<br>In Submission CVPR 2026</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            </div>
+            -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Lulin Liu<sup>1*</sup></span>
+              <span class="author-block">Dayou Li<sup>2*</sup></span>
+              <span class="author-block">Yiqing Liang<sup>3</sup></span>
+              <span class="author-block">Sicong Jiang<sup>4,8</sup></span>
+              <span class="author-block">Hitesh Vijay<sup>2</sup></span>
+              <span class="author-block">Hezhen Hu<sup>5</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Xuhai Xu<sup>6</sup></span>
+              <span class="author-block">Zirui Liu<sup>1</sup></span>
+              <span class="author-block">Srinivas Shakkottai<sup>2</sup></span>
+              <span class="author-block">Manling Li<sup>7</sup></span>
+              <span class="author-block">Zhiwen Fan<sup>2</sup></span>
+            </div>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Minnesota</span>
+              <span class="author-block"><sup>2</sup>Texas A&amp;M University</span>
+              <span class="author-block"><sup>3</sup>Brown University</span>
+              <span class="author-block"><sup>4</sup>McGill University</span>
+            </div>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>5</sup>The University of Texas at Austin</span>
+              <span class="author-block"><sup>6</sup>Columbia University</span>
+              <span class="author-block"><sup>7</sup>Northwestern University</span>
+              <span class="author-block"><sup>8</sup>2077AI</span>
+            </div>
+            <div class="is-size-6 publication-authors">
+              <span class="eql-cntrb"><small><sup>*</sup>Equal contribution.</small></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">CVPR 2026 Findings</span>
+            </div>
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block">Paper ID</span>
+            </div> -->
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                <!-- TODO: Update with your arXiv paper ID -->
+                <span class="link-block">
+                  <a href="" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://github.com/phai-lab/EgoTL.git" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- TODO: Replace with your teaser video -->
+      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+        <!-- TODO: Add your video file path here -->
+        <source src="static/videos/Video_demo_mar9.mp4" type="video/mp4">
+      </video>
+      <!-- TODO: Replace with your video description -->
+      <h2 class="subtitle has-text-centered">
+          We introduces EgoTL, a novel 'think-aloud' egocentric video benchmark designed for long-horizon household tasks. It demonstrates our unique 'say-before-act' data collection protocol, where users narrate their exact intentions (e.g., turning, grabbing, closing) in real-time. We also highlight common failure cases in current Vision-Language Models (VLMs) compared to ground-truth human reasoning. Finally, we present our evaluation results, showing that fine-tuning models on EgoTL's spatially grounded, real-time reasoning chains significantly improves their long-horizon planning and spatial understanding.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Large foundation models have made significant advances in embodied intelligence, enabling synthesis and reasoning over egocentric input for household tasks. However, VLM-based auto-labeling is often noisy because the primary data sources lack accurate human action labels, chain-of-thought (CoT), and spatial annotations; these errors are amplified during long-horizon spatial instruction following. These issues stem from insufficient coverage of minute-long, day-to-day household planning tasks and from inaccurate spatial grounding. As a result, VLM reasoning chains and world-model synthesis can hallucinate objects, skip steps, or fail to respect real-world physical attributes. To address these gaps, we introduce <strong>EgoTL</strong>. EgoTL builds a think-aloud capture pipeline for egocentric data. It uses a say-before-act protocol to record step-by-step goals and spoken reasoning with word-level timestamps, then calibrates physical properties with metric-scale spatial estimators, a memory-bank walkthrough for scene context, and clip-level tags for navigation instructions and detailed manipulation actions. With EgoTL, we benchmark VLMs on six task dimensions from three layers across more than 100 day-to-day household tasks and also evaluate a world model by simulating long-horizon, routine-task videos with CoT. We find that current foundation models still fall short as egocentric assistants or open-world simulator. Finally, on the training split of EgoTL, fine-tuning foundation models on human CoT aligned with metric labels improves long-horizon rollouts, step-wise reasoning, and spatial grounding.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Teaser figure after spatial quiz -->
+<section class="hero is-small teaser-figure">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-11">
+          <d-figure id="fig-teaser">
+            <figure>
+              <img data-zoomable draggable="false" src="static/images/Teaser_new.png" alt="Visual-Spatial Intelligence Teaser" loading="lazy">
+              <figcaption>
+                Can Multimodal LLMs “think spatially” when presented with a video recording of an environment? Can they build an accurate, implicit “cognitive map” that allows them to answer questions about a space? What are the strengths and limitations of using MLLMs to enhance spatial intelligence? We dig into these questions by setting up video data for MLLMs to watch, building a VQA benchmark to check their recall, and examining what the MLLMs actually remember and understand.
+              </figcaption>
+            </figure>
+          </d-figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser figure -->
+
+<!-- Table 1 -->
+ <section class="hero is-small teaser-figure">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-11">
+          <d-figure id="fig-table1">
+            <figure>
+              <div class="columns is-vcentered">
+                <div class="column">
+                  <img data-zoomable draggable="false" src="static/images/table1.png" alt="Table 1" loading="lazy">
+                </div>
+                <div class="column">
+                  <img data-zoomable draggable="false" src="static/images/STAT_FINAL.png" alt="Table 1" loading="lazy">
+                </div>
+              </div>
+              <figcaption>
+                Comparison of egocentric video datasets relevant to long-horizon, task-oriented navigation and manipulation. 
+                Columns indicate whether each dataset provides narration (<em>Narration</em>, including post-hoc or real-time “Think-Aloud”), explicit chain-of-thought supervision (<em>CoT</em>), task labels (<em>Task</em>), synchronized audio (<em>Audio</em>), navigation annotations (<em>Nav. Ann.</em>), and reasoning traces under complex cases (<em>Reason.</em>). ✓/✗ denote presence/absence; “Think-Aloud” denotes real-time narration and reasoning during task execution. Rows are ordered by year of release, with EgoTL (ours) shown last.
+              </figcaption>
+            </figure>
+          </d-figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Compare your spatial intelligence with GPT (6 tasks) -->
+<section class="section" id="spatial-quiz">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">
+      Compare your spatial intelligence abilities with latest GPT!
+    </h2>
+    <p class="subtitle has-text-centered">
+      Watch the egocentric video, answer the question, then reveal the ground truth and GPT's answer.
+    </p>
+
+    <!-- 预览缩略图：对应 6 个视频 -->
+    <div class="columns is-mobile is-multiline is-centered mb-4">
+      <div class="column is-narrow">
+        <figure class="image is-128x128">
+          <img
+            src="static/videos/first_frames/MemoryBank_frame1.jpg"
+            alt="Video 1"
+            class="quiz-preview"
+            data-target="quiz-video-1">
+        </figure>
+      </div>
+      <div class="column is-narrow">
+        <figure class="image is-128x128">
+          <img
+            src="static/images/IMG_831.jpeg"
+            alt="Video 2"
+            class="quiz-preview"
+            data-target="quiz-video-2">
+        </figure>
+      </div>
+      <div class="column is-narrow">
+        <figure class="image is-128x128">
+          <img
+            src="static/videos/first_frames/nextactions_frame1.jpg"
+            alt="Video 3"
+            class="quiz-preview"
+            data-target="quiz-video-3">
+        </figure>
+      </div>
+      <div class="column is-narrow">
+        <figure class="image is-128x128">
+          <img
+            src="static/videos/first_frames/current_actions_frame1.jpg"
+            alt="Video 4"
+            class="quiz-preview"
+            data-target="quiz-video-4">
+        </figure>
+      </div>
+      <div class="column is-narrow">
+        <figure class="image is-128x128">
+          <img
+            src="static/videos/first_frames/egotl_direction_recognition_frame1.jpg"
+            alt="Video 5"
+            class="quiz-preview"
+            data-target="quiz-video-5">
+        </figure>
+      </div>
+      <div class="column is-narrow">
+        <figure class="image is-128x128">
+          <img
+            src="static/videos/first_frames/egotl_distance_estimation_frame1.jpg"
+            alt="Video 6"
+            class="quiz-preview"
+            data-target="quiz-video-6">
+        </figure>
+      </div>
+    </div>
+
+    <!-- 视频 1：Memory Planning -->
+    <div id="quiz-video-1" class="quiz-video-block">
+      <h3 class="title is-5">
+        <span class="tag is-info mr-2">Memory Planning</span>
+        Task 1: Plan a route from memory
+      </h3>
+      <video class="quiz-video" controls preload="metadata" muted>
+        <!-- 换成你自己的 mp4 -->
+        <source src="static/videos/Memory_bank.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="is-size-7 has-text-grey mt-1">
+        This video is playing at 1x speed. You can adjust the speed using the controls above.
+      </p>
+
+      <div class="box mt-3">
+        <p><strong>Question:</strong>
+            My abstract task is to grab the banana in the kitchen. Based on the memory-bank video, which option should I choose if I start from the living room?        </p>
+        <p><strong>Options:</strong></p>
+        <ul style="list-style:none; padding-left:0;">
+          <li><label><input type="radio" name="q1"> A. Walk to the kitchen and pick up the banana from the kitchen island</label></li>
+          <li><label><input type="radio" name="q1"> B. Walk to the kitchen and pick up the banana from the coffee table</label></li>
+          <li><label><input type="radio" name="q1"> C. Walk to the kitchen and pick up the banana from the cabinet</label></li>
+        </ul>
+
+        <div id="quiz-answer-1" class="quiz-answer">
+          <p>
+            <strong class="has-text-success">Ground Truth:</strong> A &nbsp;&nbsp;
+            <strong class="has-text-danger">GPT:</strong> B
+          </p>
+        </div>
+
+        <p class="quiz-toggle has-text-link"
+           onclick="toggleQuizAnswer('quiz-answer-1', this)">
+          👉 Click to view Ground Truth and GPT's answer!
+        </p>
+      </div>
+    </div>
+
+    <!-- 视频 2：Action Reasoning under Complex Environment -->
+    <div id="quiz-video-2" class="quiz-video-block is-hidden">
+      <h3 class="title is-5">
+        <span class="tag is-warning mr-2">Action Reasoning under Complex Env</span>
+        Task 2: Which action should be taken under the current frame?
+      </h3>
+      <figure class="quiz-image">
+        <img class="quiz-video"
+             src="static/images/IMG_831.jpeg"
+             alt="Action reasoning scene showing table, chair, sofa, and TV stand"
+             loading="lazy">
+        <figcaption class="is-size-7 has-text-grey mt-2">
+          Reference image for the action reasoning task. Use the spatial layout shown here to answer the question below.
+        </figcaption>
+      </figure>
+
+      <div class="box mt-3">
+        <p><strong>Question:</strong>
+          My abstract task is to grab the milk from the fridge. Which action should be taken under the current frame?
+        </p>
+        <p><strong>Options:</strong></p>
+        <ul style="list-style:none; padding-left:0;">
+          <li><label><input type="radio" name="q2"> A. Open the fridge door</label></li>
+          <li><label><input type="radio" name="q2"> B. Move the trash can to the left side</label></li>
+          <li><label><input type="radio" name="q2"> C. Close the fridge door</label></li>
+          <li><label><input type="radio" name="q2"> D. Throw the bottle into the trash can</label></li>
+        </ul>
+
+        <div id="quiz-answer-2" class="quiz-answer">
+          <p>
+            <strong class="has-text-success">Ground Truth:</strong> B &nbsp;&nbsp;
+            <strong class="has-text-danger">GPT:</strong> A
+          </p>
+        </div>
+
+        <p class="quiz-toggle has-text-link"
+           onclick="toggleQuizAnswer('quiz-answer-2', this)">
+          👉 Click to view Ground Truth and GPT's answer!
+        </p>
+      </div>
+    </div>
+
+    <!-- 视频 3：Next Action Prediction -->
+    <div id="quiz-video-3" class="quiz-video-block is-hidden">
+      <h3 class="title is-5">
+        <span class="tag is-primary mr-2">Next Action Prediction</span>
+        Task 3: What happens next?
+      </h3>
+      <video class="quiz-video" controls preload="metadata" muted>
+        <source src="static/videos/nextactions.mp4" type="video/mp4">
+      </video>
+      <p class="is-size-7 has-text-grey mt-1">
+        This video is playing at 1x speed. You can adjust the speed using the controls above.
+      </p>
+
+      <div class="box mt-3">
+        <p><strong>Question:</strong>
+          After the doing the actions in video clip, what is the most likely next action?
+        </p>
+        <p><strong>Options:</strong></p>
+        <ul style="list-style:none; padding-left:0;">
+          <li><label><input type="radio" name="q3"> A. Pouring the water into the cup</label></li>
+          <li><label><input type="radio" name="q3"> B. Put down the purifier</label></li>
+          <li><label><input type="radio" name="q3"> C. Drinking water from a glass</label></li>
+          <li><label><input type="radio" name="q3"> D. Pouring juice into a glass</label></li>
+        </ul>
+
+        <div id="quiz-answer-3" class="quiz-answer">
+          <p>
+            <strong class="has-text-success">Ground Truth:</strong> B &nbsp;&nbsp;
+            <strong class="has-text-danger">GPT:</strong> C
+          </p>
+        </div>
+
+        <p class="quiz-toggle has-text-link"
+           onclick="toggleQuizAnswer('quiz-answer-3', this)">
+          👉 Click to view Ground Truth and GPT's answer!
+        </p>
+      </div>
+    </div>
+
+    <!-- 视频 4：Action Recognition -->
+    <div id="quiz-video-4" class="quiz-video-block is-hidden">
+      <h3 class="title is-5">
+        <span class="tag is-success mr-2">Action Recognition</span>
+        Task 4: What is the subject doing?
+      </h3>
+      <video class="quiz-video" controls preload="metadata" muted>
+        <source src="static/videos/current_actions.mp4" type="video/mp4">
+      </video>
+      <p class="is-size-7 has-text-grey mt-1">
+        This video is playing at 1x speed. You can adjust the speed using the controls above.
+      </p>
+
+      <div class="box mt-3">
+        <p><strong>Question:</strong>
+          Which description best matches the main action in this clip?
+        </p>
+        <p><strong>Options:</strong></p>
+        <ul style="list-style:none; padding-left:0;">
+          <li><label><input type="radio" name="q4"> A. Putting a book on the shelf</label></li>
+          <li><label><input type="radio" name="q4"> B. Closing a cabinet door</label></li>
+          <li><label><input type="radio" name="q4"> C. Placing a book on the coffee table</label></li>
+          <li><label><input type="radio" name="q4"> D. Grabbing a book with right hand</label></li>
+        </ul>
+
+        <div id="quiz-answer-4" class="quiz-answer">
+          <p>
+            <strong class="has-text-success">Ground Truth:</strong> D &nbsp;&nbsp;
+            <strong class="has-text-danger">GPT:</strong> A
+          </p>
+        </div>
+
+        <p class="quiz-toggle has-text-link"
+           onclick="toggleQuizAnswer('quiz-answer-4', this)">
+          👉 Click to view Ground Truth and GPT's answer!
+        </p>
+      </div>
+    </div>
+
+    <!-- 视频 5：Direction Recognition -->
+    <div id="quiz-video-5" class="quiz-video-block is-hidden">
+      <h3 class="title is-5">
+        <span class="tag is-link mr-2">Direction Recognition</span>
+        Task 5: Which Direction?
+      </h3>
+      <video class="quiz-video" controls preload="metadata" muted>
+        <source src="static/videos/egotl_direction_recognition.mp4" type="video/mp4">
+      </video>
+      <p class="is-size-7 has-text-grey mt-1">
+        This video is playing at 1x speed. You can adjust the speed using the controls above.
+      </p>
+
+      <div class="box mt-3">
+        <p><strong>Question:</strong>
+          In the video clip, which direction does it move?
+        </p>
+        <p><strong>Options:</strong></p>
+        <ul style="list-style:none; padding-left:0;">
+          <li><label><input type="radio" name="q5"> A. Left</label></li>
+          <li><label><input type="radio" name="q5"> B. Right</label></li>
+          <li><label><input type="radio" name="q5"> C. Walking straight</label></li>
+          <li><label><input type="radio" name="q5"> D. Standing up</label></li>
+          <li><label><input type="radio" name="q5"> E. Sitting down</label></li>
+        </ul>
+
+        <div id="quiz-answer-5" class="quiz-answer">
+          <p>
+            <strong class="has-text-success">Ground Truth:</strong> B &nbsp;&nbsp;
+            <strong class="has-text-danger">GPT:</strong> C
+          </p>
+        </div>
+
+        <p class="quiz-toggle has-text-link"
+           onclick="toggleQuizAnswer('quiz-answer-5', this)">
+          👉 Click to view Ground Truth and GPT's answer!
+        </p>
+      </div>
+    </div>
+
+    <!-- 视频 6：Distance Estimation -->
+    <div id="quiz-video-6" class="quiz-video-block is-hidden">
+      <h3 class="title is-5">
+        <span class="tag is-danger mr-2">Distance Estimation</span>
+        Task 6: How far apart?
+      </h3>
+      <video class="quiz-video" controls preload="metadata" muted>
+        <source src="static/videos/egotl_distance_estimation.mp4" type="video/mp4">
+      </video>
+      <p class="is-size-7 has-text-grey mt-1">
+        This video is playing at 1x speed. You can adjust the speed using the controls above.
+      </p>
+
+      <div class="box mt-3">
+        <p><strong>Question:</strong>
+           Approximately how far, in meters, does the person walk in this video clip?
+        </p>
+
+        <div id="quiz-answer-6" class="quiz-answer">
+          <p>
+            <strong class="has-text-success">Ground Truth:</strong> 3.98 m &nbsp;&nbsp;
+            <strong class="has-text-danger">GPT:</strong> 0.95 m
+          </p>
+        </div>
+
+        <p class="quiz-toggle has-text-link"
+           onclick="toggleQuizAnswer('quiz-answer-6', this)">
+          👉 Click to view Ground Truth and GPT's answer!
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- 模块结束 -->
+
+<hr class="section-divider">
+
+<section id="EgoTL-benchmark" class="section hero is-light -benchmark">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">EgoTL-Bench Overview</h2>
+        <div class="content has-text-justified benchmark-text">
+          <p>
+            <strong>Benchmark Overview:</strong> EgoTL-Bench decomposes egocentric spatial understanding into six tasks across three layers. Memory-conditioned planning asks the model to generate an action plan from a memory-bank walkthrough and a high-level goal. Scene-aware action reasoning tests whether it selects the correct action in cluttered scenes, such as moving an obstacle before opening a door. Next action prediction checks if the model can infer the immediate next step from the current frame and abstract task. At the perceptual layer, action recognition describes the ongoing manipulation, direction recognition identifies egocentric motion primitives (walking straight, turning, standing or sitting), and distance estimation predicts how far the subject walks in meters. The shown examples are simplified; the full benchmark uses more templates, distractors, and longer episodes.
+          </p>
+        </div>
+
+        <d-figure id="fig-task-demo" class="mt-5">
+          <figure>
+            <img data-zoomable draggable="false" src="static/images/teaser_lstask_enw.png" alt="Overview of EgoTL-Bench task categories" loading="lazy">
+            <figcaption>
+              Tasks demonstration of EgoTL-Bench. Note: the questions above are simplified slightly for clarity and brevity.
+            </figcaption>
+          </figure>
+        </d-figure>
+        <div class="content has-text-justified benchmark-text mt-3">
+          <p>
+            <strong>Evaluation Summary:</strong> EgoTL-Bench evaluates large foundation models on long-horizon egocentric reasoning with six tasks from three layers: memory-conditioned planning, scene-aware action reasoning, and perceptual-metric understanding. We report two chance-level baselines, compare open-source and proprietary VLMs, and include an EgoTL-finetuned model. Multiple-choice tasks are measured with accuracy, while distance estimation uses mean relative accuracy (MRA). We also evaluate world models on 60-second CoT-conditioned rollouts using CLIP-Score and VBench. Overall, current foundation models still lag in robust long-horizon spatial grounding, while EgoTL-based finetuning improves planning, step-wise reasoning, and rollout consistency.
+          </p>
+        </div>
+        <d-figure id="fig-main-results" class="mt-5">
+          <figure>
+            <figcaption>
+              <strong>Table 2: Evaluation of VLMs on EgoTL.</strong> We evaluate chance-level baselines, open-source VLMs, proprietary VLMs, and our EgoTL-finetuned model across three layers of egocentric spatial understanding. For each task within the open-source VLMs group, <span style="background:#525866;color:#fff;padding:0 0.25rem;border-radius:0.2rem;">dark gray</span> highlights the best open-source model and <span style="background:#d3d6dc;color:#111;padding:0 0.25rem;border-radius:0.2rem;">light gray</span> denotes the second-best open-source model.
+            </figcaption>
+            <img data-zoomable draggable="false" src="static/images/table1_mar9.png" alt="Evaluation of VLMs on EgoTL" loading="lazy">
+          </figure>
+        </d-figure>
+
+
+
+        <div class="content has-text-justified benchmark-text mt-4">
+          <p>
+            <strong>Long-Horizon Video Generation:</strong> Modern world models can produce visually coherent short-horizon predictions, but on long-horizon egocentric tasks in EgoTL their rollouts quickly drift from the underlying 3D scene and intended plan: object size and position change over time, occlusions are inconsistent, and the camera may jump between rooms instead of following a continuous path. Even when individual frames remain photorealistic, the sequences often violate basic spatial constraints (room connectivity, landmark layout, object reachability), leading to trajectories that look locally reasonable yet fail to reach the final goal or handle obstacles correctly. These observations suggest that current long-horizon generative models lack an explicit egocentric spatial backbone, and that maintaining a consistent 3D cognitive map over hundreds of frames is essential if world-model-based agents are to support reliable navigation and manipulation in real homes.
+          </p>
+        </div>
+        <d-figure id="fig-comparison" class="mt-5">
+          <figure>
+            <figcaption>
+              <strong>Table 3: Interactive long-horizon video evaluation on EgoTL.</strong> For each method, a world model generates a 60-second egocentric rollout conditioned on the same CoT sequence. The CLIP-Score columns report text-video alignment for each 10-second chunk (0--10 s, 10--20 s, ..., 50--60 s), where higher values mean better agreement with the target description. The Vbench columns report overall image quality, subject consistency (stability of the main actor), and background consistency (stability of the scene layout). COSMOS (vanilla) and WAN (vanilla) are off-the-shelf world models, while COSMOS (w/ EgoTL) is COSMOS finetuned on EgoTL; gains for this row indicate the benefit of egocentric think-aloud supervision for long-horizon generation.
+            </figcaption>
+            <img data-zoomable draggable="false" src="static/images/table4.png" alt="Model comparison visuals on EgoTL" loading="lazy">
+          </figure>
+        </d-figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="arxiv-citation">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title">BibTeX</h2>
+    </div>
+    <pre id="bibtex-code"><code>@article{liu2026egotl,
+  title={EgoTL: Egocentric Think-Aloud Chains for Long-Horizon Tasks},
+  author={Lulin Liu and Dayou Li and Yiqing Liang and Sicong Jiang and Hitesh Vijay and Hezhen Hu and Xuhai Xu and Zirui Liu and Srinivas Shakkottai and Manling Li and Zhiwen Fan},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2026},
+  url={https://arxiv.org/abs/XXXX.XXXXX}
+}</code></pre>
+  </div>
+</section>
+
+<!-- Image carousel (commented out)
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">First image description.</h2>
+        </div>
+        <div class="item">
+          <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">Second image description.</h2>
+        </div>
+        <div class="item">
+          <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">Third image description.</h2>
+        </div>
+        <div class="item">
+          <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">Fourth image description.</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+End image carousel -->
+
+<!-- YouTube video (commented out)
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+End YouTube video -->
+
+<!-- Video carousel (commented out)
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+End video carousel -->
+
+<!-- Paper poster (already commented out)
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+      <iframe src="static/pdfs/sample.pdf" width="100%" height="550"></iframe>
+    </div>
+  </div>
+</section>
+End poster -->
+
+<!-- BibTeX section (commented out)
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title">BibTeX</h2>
+      <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+        <i class="fas fa-copy"></i>
+        <span class="copy-text">Copy</span>
+      </button>
+    </div>
+    <pre id="bibtex-code"><code>@article{YourPaperKey2024,
+title={Your Paper Title Here},
+author={First Author and Second Author and Third Author},
+journal={Conference/Journal Name},
+year={2024},
+url={https://your-domain.com/your-project-page}
+}</code></pre>
+  </div>
+</section>
+End BibTeX -->
+
+  <!-- <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html> -->
