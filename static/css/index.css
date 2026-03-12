@@ -92,7 +92,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   font-size: 16px;
-  background-color: var(--background-primary);
+  background: linear-gradient(180deg, #faf6ff 0%, #f4ecff 45%, #ffffff 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -224,11 +224,13 @@ d-figure figcaption strong {
     font-weight: 700 !important;
     color: #4c1d95 !important;
     margin-bottom: 2rem !important;
-    line-height: 1.05 !important;
+    line-height: 1.14 !important;
     letter-spacing: -0.035em;
     font-size: clamp(1.5rem, 4vw, 3rem) !important;
     position: relative;
     display: inline-block;
+    padding-bottom: 0.08em;
+    overflow: visible;
     background: linear-gradient(120deg, #2e1065 0%, #7e22ce 35%, #c026d3 65%, #2e1065 100%);
     background-size: 220% auto;
     -webkit-background-clip: text;
